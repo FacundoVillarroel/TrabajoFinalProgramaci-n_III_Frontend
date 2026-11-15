@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store</title>
+  </head>
+
+  <body>
+    <p>Ingresando a Food Store...</p>
+
+    <script type="module">
+      import { obtenerSesion, redirigirPorRol, RUTAS } from "/src/utils/auth.ts";
+
+      const usuario = obtenerSesion();
+
+      // Una sesión existente permite entrar directamente al área correspondiente.
+      if (usuario) {
+        redirigirPorRol(usuario);
+      } else {
+        window.location.replace(RUTAS.login);
+      }
+    </script>
+  </body>
+</html>
