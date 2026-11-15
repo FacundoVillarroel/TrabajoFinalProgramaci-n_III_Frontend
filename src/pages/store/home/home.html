@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda | Food Store</title>
+    <link rel="stylesheet" href="../../../style.css">
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <div class="store-layout">
+      <aside aria-labelledby="categories-title">
+        <h2 id="categories-title">Categorías</h2>
+        <ul id="category-list"></ul>
+      </aside>
+
+      <main class="store-main">
+        <h2>Catálogo</h2>
+
+        <div class="catalog-controls">
+          <div class="search-form">
+            <label for="search">Buscar producto</label>
+            <input
+              type="search"
+              id="search"
+              placeholder="Escribí el nombre..."
+              disabled
+            >
+          </div>
+
+          <div class="sort-control">
+            <label for="sort">Ordenar por</label>
+            <select id="sort" disabled>
+              <option value="nombre-asc">Nombre A–Z</option>
+              <option value="nombre-desc">Nombre Z–A</option>
+              <option value="precio-asc">Menor precio</option>
+              <option value="precio-desc">Mayor precio</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="message" class="message" role="status" aria-live="polite">
+          Cargando productos...
+        </p>
+
+        <div id="products-container" class="products-container"></div>
+      </main>
+    </div>
+
+    <footer>
+      <p>Food Store</p>
+    </footer>
+
+    <script type="module" src="./home.ts"></script>
+  </body>
+</html>
