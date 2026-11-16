@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | Food Store</title>
+    <link rel="stylesheet" href="../../../style.css">
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <main class="mx-auto max-w-7xl p-5">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <h2 class="mb-0">Productos</h2>
+        <button id="new-button" type="button" class="primary-button" disabled>
+          Nuevo producto
+        </button>
+      </div>
+
+      <p id="message" class="message" role="status" aria-live="polite">
+        Cargando productos...
+      </p>
+
+      <button id="retry-button" type="button" class="secondary-button mb-5" hidden>
+        Reintentar
+      </button>
+
+      <p id="empty-message" class="rounded-xl bg-white p-6" hidden>
+        No hay productos activos.
+      </p>
+
+      <div id="table-container" class="table-container" hidden>
+        <table class="inventory-table">
+          <caption class="sr-only">Productos activos del catálogo</caption>
+
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Imagen</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Stock</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody id="products-body"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <dialog
+      id="product-modal"
+      aria-labelledby="modal-title"
+      class="m-auto max-h-[90vh] w-11/12 max-w-2xl overflow-y-auto rounded-xl border border-border bg-white p-6 text-text shadow-card backdrop:bg-black/50"
+    >
+      <h2 id="modal-title">Nuevo producto</h2>
+
+      <form id="product-form">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <textarea id="description" name="description" rows="3"></textarea>
+        </div>
+
+        <div class="grid gap-x-5 sm:grid-cols-2">
+          <div class="form-group">
+            <label for="price">Precio</label>
+            <input
+              id="price"
+              name="price"
+              type="number"
+              min="0.01"
+              step="0.01"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="stock">Stock</label>
+            <input
+              id="stock"
+              name="stock"
+              type="number"
+              min="0"
+              step="1"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Categoría</label>
+          <select id="category" name="category" required></select>
+        </div>
+
+        <div class="form-group">
+          <label for="image">URL de la imagen</label>
+          <input
+            id="image"
+            name="image"
+            type="url"
+            placeholder="https://ejemplo.com/imagen.jpg"
+          >
+        </div>
+
+        <label class="mb-5 flex cursor-pointer items-center gap-3">
+          <input id="available" name="available" type="checkbox" class="h-4 w-4">
+          Disponible para la venta
+        </label>
+
+        <p id="form-message" class="message error" role="alert"></p>
+
+        <div class="flex flex-wrap justify-end gap-3">
+          <button id="cancel-button" type="button" class="secondary-button">
+            Cancelar
+          </button>
+
+          <button type="submit" class="primary-button">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <footer>
+      <p>Food Store</p>
+    </footer>
+
+    <script type="module" src="./products.ts"></script>
+  </body>
+</html>
