@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración | Food Store</title>
+    <link rel="stylesheet" href="../../../style.css">
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <div class="grid min-h-[70vh] md:grid-cols-[220px_minmax(0,1fr)]">
+      <aside class="border-r border-border">
+        <h2>Administración</h2>
+
+        <nav aria-label="Panel de administración">
+          <ul class="space-y-4">
+            <li>
+              <a href="../categories/categories.html" class="font-bold hover:underline">
+                Categorías
+              </a>
+            </li>
+            <li>
+              <a href="../products/products.html" class="font-bold hover:underline">
+                Productos
+              </a>
+            </li>
+            <li>
+              <a href="../orders/orders.html" class="font-bold hover:underline">
+                Pedidos
+              </a>
+            </li>
+            <li>
+              <a href="../../store/home/home.html" class="font-bold hover:underline">
+                Ver tienda
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="min-w-0 p-5">
+        <h2>Panel de administración</h2>
+
+        <p id="message" class="message" role="status" aria-live="polite">
+          Cargando estadísticas...
+        </p>
+
+        <button id="retry-button" type="button" class="secondary-button mb-5" hidden>
+          Reintentar
+        </button>
+
+        <div id="dashboard-content" hidden>
+          <section
+            class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4"
+            aria-label="Estadísticas generales"
+          >
+            <article class="rounded-xl border border-border bg-white p-6 shadow-card">
+              <h3 class="font-bold">Total de categorías</h3>
+              <p id="categories-count" class="mb-0 text-3xl font-bold text-primary"></p>
+            </article>
+
+            <article class="rounded-xl border border-border bg-white p-6 shadow-card">
+              <h3 class="font-bold">Total de productos</h3>
+              <p id="products-count" class="mb-0 text-3xl font-bold text-primary"></p>
+            </article>
+
+            <article class="rounded-xl border border-border bg-white p-6 shadow-card">
+              <h3 class="font-bold">Total de pedidos</h3>
+              <p id="orders-count" class="mb-0 text-3xl font-bold text-primary"></p>
+            </article>
+
+            <article class="rounded-xl border border-border bg-white p-6 shadow-card">
+              <h3 class="font-bold">Productos disponibles</h3>
+              <p id="available-count" class="mb-0 text-3xl font-bold text-primary"></p>
+            </article>
+          </section>
+
+          <div class="mt-6 grid items-start gap-5 lg:grid-cols-3">
+            <section class="rounded-xl border border-border bg-white p-6 shadow-card">
+              <h3 class="mb-4 text-lg font-bold text-primary">Categorías</h3>
+
+              <dl class="space-y-3">
+                <div class="flex justify-between gap-4">
+                  <dt>Activas</dt>
+                  <dd id="active-categories"></dd>
+                </div>
+                <div class="flex justify-between gap-4">
+                  <dt>Dadas de baja</dt>
+                  <dd id="deleted-categories"></dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="rounded-xl border border-border bg-white p-6 shadow-card">
+              <h3 class="mb-4 text-lg font-bold text-primary">Productos</h3>
+
+              <dl class="space-y-3">
+                <div class="flex justify-between gap-4">
+                  <dt>Activos</dt>
+                  <dd id="active-products"></dd>
+                </div>
+                <div class="flex justify-between gap-4">
+                  <dt>Dados de baja</dt>
+                  <dd id="deleted-products"></dd>
+                </div>
+                <div class="flex justify-between gap-4">
+                  <dt>Activos fuera de venta</dt>
+                  <dd id="unavailable-products"></dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="rounded-xl border border-border bg-white p-6 shadow-card">
+              <h3 class="mb-4 text-lg font-bold text-primary">Pedidos por estado</h3>
+              <ul id="orders-summary" class="space-y-3"></ul>
+            </section>
+          </div>
+
+          <p id="users-summary" class="mt-6 text-sm"></p>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <p>Food Store</p>
+    </footer>
+
+    <script type="module" src="./adminHome.ts"></script>
+  </body>
+</html>
