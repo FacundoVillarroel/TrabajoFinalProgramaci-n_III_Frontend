@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito | Food Store</title>
+    <link rel="stylesheet" href="../../../style.css">
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <main class="mx-auto max-w-6xl p-5">
+      <h2>Mi carrito</h2>
+
+      <p id="message" class="message" role="status" aria-live="polite">
+        Cargando carrito...
+      </p>
+
+      <section id="empty-cart" class="rounded-xl bg-white p-8 text-center" hidden>
+        <h3 class="text-xl font-bold">Tu carrito está vacío</h3>
+        <p>Elegí tus productos favoritos para empezar un pedido.</p>
+        <a href="../home/home.html" class="primary-button">Ir a la tienda</a>
+      </section>
+
+      <div id="cart-content" hidden>
+        <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+          <fieldset id="cart-controls" class="min-w-0">
+            <legend class="sr-only">Productos del carrito</legend>
+
+            <div id="cart-items" class="space-y-4"></div>
+
+            <button
+              id="clear-button"
+              type="button"
+              class="secondary-button mt-5"
+            >
+              Vaciar carrito
+            </button>
+          </fieldset>
+
+          <section class="rounded-xl border border-border bg-white p-6 shadow-card">
+            <h3 class="text-xl font-bold">Resumen del pedido</h3>
+
+            <dl class="my-5 space-y-3">
+              <div class="flex justify-between gap-4">
+                <dt>Subtotal</dt>
+                <dd id="subtotal"></dd>
+              </div>
+
+              <div class="flex justify-between gap-4">
+                <dt>Envío</dt>
+                <dd id="shipping"></dd>
+              </div>
+
+              <div class="flex justify-between gap-4 border-t border-border pt-3 text-lg font-bold">
+                <dt>Total</dt>
+                <dd id="total"></dd>
+              </div>
+            </dl>
+
+            <form id="checkout-form">
+              <fieldset id="checkout-controls">
+                <legend class="sr-only">Datos de la compra</legend>
+
+                <div class="form-group">
+                  <label for="phone">Teléfono de contacto</label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    required
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="payment">Forma de pago</label>
+                  <select id="payment" name="payment" required>
+                    <option value="">Seleccioná una opción</option>
+                    <option value="TARJETA">Tarjeta</option>
+                    <option value="TRANSFERENCIA">Transferencia</option>
+                    <option value="EFECTIVO">Efectivo</option>
+                  </select>
+                </div>
+
+                <button id="confirm-button" type="submit" class="primary-button w-full">
+                  Confirmar pedido
+                </button>
+              </fieldset>
+            </form>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Food Store</p>
+    </footer>
+
+    <script type="module" src="./cart.ts"></script>
+  </body>
+</html>
