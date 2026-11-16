@@ -166,12 +166,14 @@ export async function obtenerPedidos(): Promise<Pedido[]> {
       estado: adaptarEstado(pedido.estado),
       formaPago: pedido.formaPago,
       idUsuario: pedido.usuarioDto.id,
+      nombreCliente:
+        `${pedido.usuarioDto.nombre} ${pedido.usuarioDto.apellido}`.trim(),
       telefono: pedido.usuarioDto.celular ?? "",
       detalles,
       subtotal,
       // Los pedidos de prueba ya tienen su total calculado sin envío.
       envio: 0,
-      total: pedido.total
+      total: pedido.total,
     };
   });
 }

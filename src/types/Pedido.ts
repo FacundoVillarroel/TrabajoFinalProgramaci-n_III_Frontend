@@ -21,6 +21,7 @@ export interface Pedido {
   estado: EstadoPedido;
   formaPago: FormaPago;
   idUsuario: number;
+  nombreCliente?: string;
   telefono: string;
   detalles: DetallePedido[];
   subtotal: number;

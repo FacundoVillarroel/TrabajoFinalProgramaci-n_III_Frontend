@@ -111,6 +111,7 @@ export async function crearPedido(
     estado: "PENDIENTE",
     formaPago,
     idUsuario: usuario.id,
+    nombreCliente: `${usuario.nombre} ${usuario.apellido}`.trim(),
     telefono: telefonoLimpio,
     detalles,
     subtotal,

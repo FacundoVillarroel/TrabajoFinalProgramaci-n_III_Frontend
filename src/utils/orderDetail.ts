@@ -30,7 +30,7 @@ export function crearBadgeEstado(estado: EstadoPedido): HTMLSpanElement {
   return badge;
 }
 
-export function mostrarDetallePedido(pedido: Pedido): void {
+export function mostrarDetallePedido(pedido: Pedido): HTMLDialogElement {
   const modal = document.createElement("dialog");
 
   modal.className =
@@ -121,8 +121,7 @@ export function mostrarDetallePedido(pedido: Pedido): void {
 
     const cantidad = document.createElement("p");
     cantidad.className = "my-1 text-sm";
-    cantidad.textContent =
-      `${detalle.cantidad} × ${formatearPrecio(detalle.precioUnitario)}`;
+    cantidad.textContent = `${detalle.cantidad} × ${formatearPrecio(detalle.precioUnitario)}`;
 
     const importe = document.createElement("p");
     importe.className = "my-0 font-bold";
@@ -142,4 +141,6 @@ export function mostrarDetallePedido(pedido: Pedido): void {
 
   // showModal bloquea la interacción con el fondo y mantiene el foco en el diálogo.
   modal.showModal();
+  // Permite agregar controles administrativos al mismo detalle compartido.
+  return modal;
 }
