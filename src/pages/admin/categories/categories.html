@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías | Food Store</title>
+    <link rel="stylesheet" href="../../../style.css">
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <main class="mx-auto max-w-6xl p-5">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <h2 class="mb-0">Categorías</h2>
+        <button id="new-button" type="button" class="primary-button" disabled>
+          Nueva categoría
+        </button>
+      </div>
+
+      <p id="message" class="message" role="status" aria-live="polite">
+        Cargando categorías...
+      </p>
+
+      <button id="retry-button" type="button" class="secondary-button mb-5" hidden>
+        Reintentar
+      </button>
+
+      <p id="empty-message" class="rounded-xl bg-white p-6" hidden>
+        No hay categorías activas. Creá una para comenzar.
+      </p>
+
+      <div id="table-container" class="table-container" hidden>
+        <table class="inventory-table">
+          <caption class="sr-only">Categorías activas del catálogo</caption>
+
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Imagen</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody id="categories-body"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <dialog
+      id="category-modal"
+      aria-labelledby="modal-title"
+      class="m-auto max-h-[90vh] w-11/12 max-w-lg overflow-y-auto rounded-xl border border-border bg-white p-6 text-text shadow-card backdrop:bg-black/50"
+    >
+      <h2 id="modal-title">Nueva categoría</h2>
+
+      <form id="category-form">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="3"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="image">URL de la imagen</label>
+          <input
+            id="image"
+            name="image"
+            type="url"
+            placeholder="https://ejemplo.com/imagen.jpg"
+            required
+          >
+        </div>
+
+        <p id="form-message" class="message error" role="alert"></p>
+
+        <div class="flex flex-wrap justify-end gap-3">
+          <button id="cancel-button" type="button" class="secondary-button">
+            Cancelar
+          </button>
+
+          <button type="submit" class="primary-button">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <footer>
+      <p>Food Store</p>
+    </footer>
+
+    <script type="module" src="./categories.ts"></script>
+  </body>
+</html>
