@@ -137,12 +137,14 @@ function crearTarjetaProducto(
       try {
         agregarAlCarrito(usuario.id, producto, 1);
         actualizarContadorCarrito(usuario.id);
-        mostrarMensaje(`Se agregó ${producto.nombre} al carrito.`, false);
+
+        // El aviso es visible aunque el usuario esté al final del catálogo.
+        window.alert(`Se agregó ${producto.nombre} al carrito.`);
       } catch (error) {
         if (error instanceof Error) {
-          mostrarMensaje(error.message, true);
+          window.alert(error.message);
         } else {
-          mostrarMensaje("No se pudo agregar el producto.", true);
+          window.alert("No se pudo agregar el producto.");
         }
       }
     });

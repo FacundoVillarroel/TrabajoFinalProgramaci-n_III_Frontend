@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  plugins: [tailwindcss()],
   appType: "mpa",
   build: {
     rollupOptions: {
@@ -16,8 +18,8 @@ export default defineConfig({
         "src/pages/admin/adminHome/adminHome.html",
         "src/pages/admin/categories/categories.html",
         "src/pages/admin/products/products.html",
-        "src/pages/admin/orders/orders.html"
-      ]
-    }
-  }
+        "src/pages/admin/orders/orders.html",
+      ],
+    },
+  },
 });

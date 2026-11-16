@@ -70,17 +70,16 @@ function configurarCompra(producto: Producto, usuario: Usuario): void {
       agregarAlCarrito(usuario.id, producto, cantidad);
       actualizarContadorCarrito(usuario.id);
 
-      mostrarMensaje(
+      window.alert(
         `Se agregaron ${cantidad} unidades de ${producto.nombre} al carrito.`,
-        false,
       );
 
       quantityInput.value = "1";
     } catch (error) {
       if (error instanceof Error) {
-        mostrarMensaje(error.message, true);
+        window.alert(error.message);
       } else {
-        mostrarMensaje("No se pudo agregar el producto al carrito.", true);
+        window.alert("No se pudo agregar el producto al carrito.");
       }
     }
   });
