@@ -3,30 +3,41 @@ import { formatearFecha, formatearPrecio } from "./format";
 
 export function crearBadgeEstado(estado: EstadoPedido): HTMLSpanElement {
   const badge = document.createElement("span");
-  badge.className = "inline-block rounded-full px-3 py-1 text-sm font-bold";
+
+  badge.className =
+    "inline-flex items-center gap-2 rounded-md border bg-white px-3 py-1 text-sm font-semibold text-[#333]";
+
+  const indicador = document.createElement("span");
+  indicador.className = "h-2.5 w-2.5 shrink-0 rounded-full";
+  indicador.setAttribute("aria-hidden", "true");
 
   switch (estado) {
     case "PENDIENTE":
       badge.textContent = "Pendiente";
-      badge.classList.add("bg-orange-100", "text-orange-800");
+      badge.classList.add("border-[#d49a10]");
+      indicador.classList.add("bg-[#d49a10]");
       break;
 
     case "CONFIRMADO":
       badge.textContent = "Confirmado";
-      badge.classList.add("bg-blue-100", "text-blue-800");
+      badge.classList.add("border-[#2563eb]");
+      indicador.classList.add("bg-[#2563eb]");
       break;
 
     case "TERMINADO":
       badge.textContent = "Terminado";
-      badge.classList.add("bg-green-100", "text-green-800");
+      badge.classList.add("border-[#258348]");
+      indicador.classList.add("bg-[#258348]");
       break;
 
     case "CANCELADO":
       badge.textContent = "Cancelado";
-      badge.classList.add("bg-red-100", "text-red-800");
+      badge.classList.add("border-[#c43e3e]");
+      indicador.classList.add("bg-[#c43e3e]");
       break;
   }
 
+  badge.prepend(indicador);
   return badge;
 }
 
