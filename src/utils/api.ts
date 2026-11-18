@@ -3,7 +3,7 @@ import type { Producto } from "../types/Producto";
 import type { Usuario, UsuarioConCredenciales } from "../types/Usuario";
 import type { EstadoPedido, FormaPago, Pedido } from "../types/Pedido";
 
-// Estas interfaces describen el formato original de los JSON de la cátedra.
+// Estas interfaces describen el formato original de los JSON.
 interface CategoriaJson {
   id: number;
   nombre: string;
