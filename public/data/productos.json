@@ -5,7 +5,7 @@
     "precio": 4500,
     "descripcion": "Carne 150g, lechuga, tomate, cebolla morada y mayonesa",
     "stock": 50,
-    "imagen": "https://foodish-api.com/images/burger/burger1.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNIFBOhpomdD-LhktJkFsrMWtyd8vTNT_wArjA_4osxg&s=10",
     "disponible": true,
     "eliminado": false,
     "categoria": {
@@ -20,7 +20,7 @@
     "precio": 6200,
     "descripcion": "Doble carne 150g c/u, cheddar, panceta y salsa barbacoa",
     "stock": 40,
-    "imagen": "https://foodish-api.com/images/burger/burger2.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4qj3Lbqn97olFjDNUTL0EF8_-Ht413hK7ZFBQu7xo4TtzumxIz54n-8M&s=10",
     "disponible": true,
     "eliminado": false,
     "categoria": {
@@ -35,7 +35,7 @@
     "precio": 5500,
     "descripcion": "Carne 150g, huevo, jamón, queso, lechuga y tomate",
     "stock": 30,
-    "imagen": "https://foodish-api.com/images/burger/burger3.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPttSL_1NEXr7SymoWhMCtUp31peYXaDJAU5BOdI-w_OfFzdJKJgyxZHE&s=10",
     "disponible": true,
     "eliminado": false,
     "categoria": {
@@ -65,7 +65,7 @@
     "precio": 3800,
     "descripcion": "Mozzarella, salsa de tomate y orégano",
     "stock": 25,
-    "imagen": "https://foodish-api.com/images/pizza/pizza1.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFSuTDA1ig2GaRD5Zl1US8HMQNtvCx3xZSq1ngSiPreQ&s=10",
     "disponible": true,
     "eliminado": false,
     "categoria": {
@@ -80,7 +80,7 @@
     "precio": 4500,
     "descripcion": "Mozzarella, rodajas de tomate, ajo, aceitunas y albahaca",
     "stock": 25,
-    "imagen": "https://foodish-api.com/images/pizza/pizza2.jpg",
+    "imagen": "https://images.ecestaticos.com/D7SwpjRE0p9BjS_3Dmbn9t6UBCU=/0x0:796x670/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F044%2Fa3a%2F450%2F044a3a45065915323d42c8bd6d39940d.jpg",
     "disponible": true,
     "eliminado": false,
     "categoria": {
@@ -95,7 +95,7 @@
     "precio": 4800,
     "descripcion": "Mozzarella, cebolla caramelizada, jamón y aceitunas",
     "stock": 20,
-    "imagen": "https://foodish-api.com/images/pizza/pizza3.jpg",
+    "imagen": "https://recetasargentinas.net/wp-content/uploads/2023/01/20230111_131917-01-01-scaled.jpeg",
     "disponible": true,
     "eliminado": false,
     "categoria": {
@@ -110,7 +110,7 @@
     "precio": 5200,
     "descripcion": "Mozzarella, pepperoni, morrón, cebolla, huevo y aceitunas",
     "stock": 15,
-    "imagen": "https://foodish-api.com/images/pizza/pizza4.jpg",
+    "imagen": "https://locosxlaparrilla.com/wp-content/uploads/2015/02/Receta-recetas-locos-x-la-parrilla-locosxlaparrilla-receta-pizza-receta-pizza-huevo-morron-aceitunas-pizza-huevo-morron-aceitunas.jpg",
     "disponible": true,
     "eliminado": false,
     "categoria": {
