@@ -166,4 +166,4 @@ Cada pantalla carga su propio módulo TypeScript. `vite.config.ts` declara las e
 
 ## Video y documentación del TPI
 
-El enlace público al video demostrativo y el enlace a la documentación PDF se incorporarán al completar el backend y preparar la entrega conjunta.
+[Enlace al video de presentación](https://youtu.be/sl-H9z2PtGE)
